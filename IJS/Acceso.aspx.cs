@@ -14,6 +14,11 @@ namespace IJS
 
         }
 
+        /// <summary>
+        /// Recuerda validar el acceso.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void ValidaAcceso(object sender, EventArgs e)
         {
             Response.Redirect("/App/Main.aspx");
