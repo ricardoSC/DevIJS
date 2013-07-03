@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="WM_INICIA_SESION">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Clave" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WM_INICIA_SESIONResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WM_INICIA_SESIONResult" type="tns:INICIA_SESION" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="INICIA_SESION">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Error" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="MsgError" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="APaterno" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AMaterno" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdGrupoUsuario" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="WM_LEER_ACCESOS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Usuario" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WM_LEER_ACCESOSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WM_LEER_ACCESOSResult" type="tns:ArrayOfLEER_ACCESOS" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfLEER_ACCESOS">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="LEER_ACCESOS" nillable="true" type="tns:LEER_ACCESOS" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="LEER_ACCESOS">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IdAcceso" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="IdTransaccion" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="INICIA_SESION" nillable="true" type="tns:INICIA_SESION" />
+      <s:element name="ArrayOfLEER_ACCESOS" nillable="true" type="tns:ArrayOfLEER_ACCESOS" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="WM_INICIA_SESIONSoapIn">
+    <wsdl:part name="parameters" element="tns:WM_INICIA_SESION" />
+  </wsdl:message>
+  <wsdl:message name="WM_INICIA_SESIONSoapOut">
+    <wsdl:part name="parameters" element="tns:WM_INICIA_SESIONResponse" />
+  </wsdl:message>
+  <wsdl:message name="WM_LEER_ACCESOSSoapIn">
+    <wsdl:part name="parameters" element="tns:WM_LEER_ACCESOS" />
+  </wsdl:message>
+  <wsdl:message name="WM_LEER_ACCESOSSoapOut">
+    <wsdl:part name="parameters" element="tns:WM_LEER_ACCESOSResponse" />
+  </wsdl:message>
+  <wsdl:message name="WM_INICIA_SESIONHttpGetIn">
+    <wsdl:part name="Usuario" type="s:string" />
+    <wsdl:part name="Clave" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="WM_INICIA_SESIONHttpGetOut">
+    <wsdl:part name="Body" element="tns:INICIA_SESION" />
+  </wsdl:message>
+  <wsdl:message name="WM_LEER_ACCESOSHttpGetIn">
+    <wsdl:part name="Usuario" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="WM_LEER_ACCESOSHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfLEER_ACCESOS" />
+  </wsdl:message>
+  <wsdl:message name="WM_INICIA_SESIONHttpPostIn">
+    <wsdl:part name="Usuario" type="s:string" />
+    <wsdl:part name="Clave" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="WM_INICIA_SESIONHttpPostOut">
+    <wsdl:part name="Body" element="tns:INICIA_SESION" />
+  </wsdl:message>
+  <wsdl:message name="WM_LEER_ACCESOSHttpPostIn">
+    <wsdl:part name="Usuario" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="WM_LEER_ACCESOSHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfLEER_ACCESOS" />
+  </wsdl:message>
+  <wsdl:portType name="wsIJSSoap">
+    <wsdl:operation name="WM_INICIA_SESION">
+      <wsdl:input message="tns:WM_INICIA_SESIONSoapIn" />
+      <wsdl:output message="tns:WM_INICIA_SESIONSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WM_LEER_ACCESOS">
+      <wsdl:input message="tns:WM_LEER_ACCESOSSoapIn" />
+      <wsdl:output message="tns:WM_LEER_ACCESOSSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="wsIJSHttpGet">
+    <wsdl:operation name="WM_INICIA_SESION">
+      <wsdl:input message="tns:WM_INICIA_SESIONHttpGetIn" />
+      <wsdl:output message="tns:WM_INICIA_SESIONHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WM_LEER_ACCESOS">
+      <wsdl:input message="tns:WM_LEER_ACCESOSHttpGetIn" />
+      <wsdl:output message="tns:WM_LEER_ACCESOSHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="wsIJSHttpPost">
+    <wsdl:operation name="WM_INICIA_SESION">
+      <wsdl:input message="tns:WM_INICIA_SESIONHttpPostIn" />
+      <wsdl:output message="tns:WM_INICIA_SESIONHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WM_LEER_ACCESOS">
+      <wsdl:input message="tns:WM_LEER_ACCESOSHttpPostIn" />
+      <wsdl:output message="tns:WM_LEER_ACCESOSHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="wsIJSSoap" type="tns:wsIJSSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="WM_INICIA_SESION">
+      <soap:operation soapAction="http://tempuri.org/WM_INICIA_SESION" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WM_LEER_ACCESOS">
+      <soap:operation soapAction="http://tempuri.org/WM_LEER_ACCESOS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="wsIJSSoap12" type="tns:wsIJSSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="WM_INICIA_SESION">
+      <soap12:operation soapAction="http://tempuri.org/WM_INICIA_SESION" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WM_LEER_ACCESOS">
+      <soap12:operation soapAction="http://tempuri.org/WM_LEER_ACCESOS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="wsIJSHttpGet" type="tns:wsIJSHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="WM_INICIA_SESION">
+      <http:operation location="/WM_INICIA_SESION" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WM_LEER_ACCESOS">
+      <http:operation location="/WM_LEER_ACCESOS" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="wsIJSHttpPost" type="tns:wsIJSHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="WM_INICIA_SESION">
+      <http:operation location="/WM_INICIA_SESION" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WM_LEER_ACCESOS">
+      <http:operation location="/WM_LEER_ACCESOS" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="wsIJS">
+    <wsdl:port name="wsIJSSoap" binding="tns:wsIJSSoap">
+      <soap:address location="http://ijsaalla.com/ijsaalla/WSIJS/wsijsaalla/wsIJS.asmx" />
+    </wsdl:port>
+    <wsdl:port name="wsIJSSoap12" binding="tns:wsIJSSoap12">
+      <soap12:address location="http://ijsaalla.com/ijsaalla/WSIJS/wsijsaalla/wsIJS.asmx" />
+    </wsdl:port>
+    <wsdl:port name="wsIJSHttpGet" binding="tns:wsIJSHttpGet">
+      <http:address location="http://ijsaalla.com/ijsaalla/WSIJS/wsijsaalla/wsIJS.asmx" />
+    </wsdl:port>
+    <wsdl:port name="wsIJSHttpPost" binding="tns:wsIJSHttpPost">
+      <http:address location="http://ijsaalla.com/ijsaalla/WSIJS/wsijsaalla/wsIJS.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
