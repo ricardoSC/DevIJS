@@ -33,6 +33,8 @@ namespace IJS
 
             sesionIJS = clienteIJS.WM_INICIA_SESION(txtUser.Text, txtPass.Text);
 
+            //COMENTARIO DE EJEMPLO PARA COMMIT EN GITHUB.
+
             if (sesionIJS.Error == 0)
             {
                 Response.Redirect("/App/Main.aspx");
