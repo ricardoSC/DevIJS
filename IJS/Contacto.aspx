@@ -8,6 +8,7 @@
         <link rel="stylesheet" type="text/css" href="styles/reset.css" media="screen" />
         <link rel="stylesheet" type="text/css" href="styles/styles.css" media="screen" />
         <link href='http://fonts.googleapis.com/css?family=BenchNine:700' rel='stylesheet' type='text/css'/>
+        <link href='http://fonts.googleapis.com/css?family=Carrois+Gothic' rel='stylesheet' type='text/css'/>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     </head>
     <body>
@@ -27,8 +28,29 @@
             </div>
             <div class="clear"></div>
             <div id="body">
-                <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+            <div id="container">
+            <div class="containertext">
+				            <h1>Contacto</h1>
+                            <div class="clear" ></div>
+                            <p>
+                                Nuestras oficinas:
+                                </br></br>
+                                Calle Xilitla Numero 215,<br />Fraccionamiento Lomas 1a. Sección.</br></br>
+                                Telefonos:</br></br>
+                                Oficina: (444) 8 17 71 84 y 1 28 37 66.</br>
+                                Celular 44 41 40 39 95.</br></br>
+                                San Luis Potosí, S.L.P.</br>
+                            </p>			
+						</div>
+                        <div class="separator"></div>
+                        <div class="containertext">
+                           <div class="clear"></div>
+                           <iframe width="400" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps/ms?msa=0&amp;msid=213497176846187965092.0004e243999914b3a000f&amp;ie=UTF8&amp;t=h&amp;ll=22.147662,-101.021293&amp;spn=0.00477,0.006866&amp;z=17&amp;output=embed"></iframe><br />
+                        </div>
             </div>
+            </div>
+
+            <div class="clear" ></div>
 
             <div id="footer">
                 <a>2013 | AVISO DE PRIVACIDAD</a>

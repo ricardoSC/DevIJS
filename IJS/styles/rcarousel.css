@@ -1,0 +1,58 @@
+﻿#container {
+	width: 800px;
+	position: relative;
+	margin: 0 auto;
+}
+
+
+#carousel {
+    width: 780px;
+    margin: 0 auto;
+}
+			
+#ui-carousel-next, #ui-carousel-prev {
+    width: 40px;
+    height: 400px;
+    background: url(images/arrow-left.png)   center center no-repeat;
+    display: block;
+    position: absolute;
+    top: 0;
+    z-index: 100;
+}
+
+#ui-carousel-next {
+    right: 0px;
+    background-image: url(images/arrow-right.png);
+}
+
+#ui-carousel-prev {
+    left: 0;
+}
+			
+#ui-carousel-next > span, #ui-carousel-prev > span {
+    display: none;
+}
+			
+.slide {
+    margin: 0;
+    margin-left: 30px;
+    position: relative;        
+ }
+ 
+ 
+
+			
+#pages {
+    width: 150px;
+    margin: 0 auto;
+}
+			
+.bullet {
+    background: url(images/page-off.png) center center no-repeat;
+    display: block;
+    width: 18px;
+    height: 18px;
+    margin: 0;
+    margin-right: 5px;
+    float: left;				
+}

@@ -88,19 +88,32 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Acceso.aspx" />
+    <Content Include="App\ClienteNuevo.aspx" />
+    <Content Include="App\ContratoNuevo.aspx" />
+    <Content Include="App\InmuebleNuevo.aspx" />
     <Content Include="App\JuicioNuevo.aspx" />
     <Content Include="App\Main.aspx" />
     <Content Include="Contacto.aspx" />
     <Content Include="Default.aspx" />
+    <Content Include="js\jquery-1.7.1.js" />
+    <Content Include="js\jquery.ui.core.js" />
+    <Content Include="js\jquery.ui.rcarousel.js" />
+    <Content Include="js\jquery.ui.widget.js" />
     <Content Include="Servicios.aspx" />
+    <Content Include="styles\images\arrow-bottom.png" />
+    <Content Include="styles\images\arrow-left.png" />
+    <Content Include="styles\images\arrow-right.png" />
+    <Content Include="styles\images\arrow-top.png" />
     <Content Include="styles\images\background.jpg" />
     <Content Include="styles\images\background1.png" />
     <Content Include="styles\images\buttonbg-over.png" />
     <Content Include="styles\images\buttonbg.png" />
     <Content Include="styles\images\headerAdmin.png" />
     <Content Include="styles\images\logo.png" />
-    <Content Include="styles\reset.css" />
-    <Content Include="styles\styles.css" />
+    <Content Include="styles\images\nuestroequipo.jpg" />
+    <Content Include="styles\images\page-off.png" />
+    <Content Include="styles\images\page-on.png" />
+    <Content Include="styles\rcarousel.css" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -116,6 +129,8 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
     <None Include="Web References\wsIJS\wsIJS.disco" />
+    <Content Include="styles\reset.css" />
+    <Content Include="styles\styles.css" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -131,6 +146,27 @@
     </Compile>
     <Compile Include="Acceso.aspx.designer.cs">
       <DependentUpon>Acceso.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\ClienteNuevo.aspx.cs">
+      <DependentUpon>ClienteNuevo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\ClienteNuevo.aspx.designer.cs">
+      <DependentUpon>ClienteNuevo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\ContratoNuevo.aspx.cs">
+      <DependentUpon>ContratoNuevo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\ContratoNuevo.aspx.designer.cs">
+      <DependentUpon>ContratoNuevo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\InmuebleNuevo.aspx.cs">
+      <DependentUpon>InmuebleNuevo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\InmuebleNuevo.aspx.designer.cs">
+      <DependentUpon>InmuebleNuevo.aspx</DependentUpon>
     </Compile>
     <Compile Include="App\JuicioNuevo.aspx.cs">
       <DependentUpon>JuicioNuevo.aspx</DependentUpon>

@@ -239,7 +239,7 @@
                         <Items>
                             <ext:MenuItem ID="miNC" runat="server" Text="Nuevo Contrato" Icon="PageAdd">
                                 <Listeners>
-                                    <Click Handler="addTab(#{tabMain}, 'idNC', 'http://www.w3schools.com/', this, 'Nuevo Contrato');" />
+                                    <Click Handler="addTab(#{tabMain}, 'idNC', 'ContratoNuevo.aspx', this, 'Contratos - Nuevo Contrato');" />
                                 </Listeners>
                             </ext:MenuItem>                            
                             
@@ -276,7 +276,7 @@
                         <Items>
                             <ext:MenuItem ID="miNB" runat="server" Text="Alta de Bienes e Inmuebles" Icon="BuildingAdd">
                                 <Listeners>
-                                    <Click Handler="addTab(#{tabMain}, 'idNB', 'http://www.w3schools.com/', this, 'Alta de Bienes');" />
+                                    <Click Handler="addTab(#{tabMain}, 'idNB', 'InmuebleNuevo.aspx', this, 'Bienes e Inmuebles - Alta de Bienes/Inmuebles');" />
                                 </Listeners>
                             </ext:MenuItem>                            
                             
@@ -299,9 +299,9 @@
                     >
                     <Menu ID="mClientes" runat="server">
                         <Items>
-                            <ext:MenuItem ID="miCC" runat="server" Text="Consulta de Clientes" Icon="Group">
+                            <ext:MenuItem ID="miCC" runat="server" Text="Nuevo Cliente" Icon="Group">
                                 <Listeners>
-                                    <Click Handler="addTab(#{tabMain}, 'idCC', 'http://www.w3schools.com/', this, 'Consulta de Clientes');" />
+                                    <Click Handler="addTab(#{tabMain}, 'idCC', 'ClienteNuevo.aspx', this, 'Clientes - Nuevo Cliente');" />
                                 </Listeners>
                             </ext:MenuItem>                            
                             

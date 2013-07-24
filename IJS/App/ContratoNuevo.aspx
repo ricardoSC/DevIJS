@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="JuicioNuevo.aspx.cs" Inherits="IJS.App.JuicioNuevo" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ContratoNuevo.aspx.cs" Inherits="IJS.App.ContratoNuevo" %>
 
 <%@ Register Assembly="Ext.Net" Namespace="Ext.Net" TagPrefix="ext" %>
 
@@ -8,7 +8,7 @@
 <head runat="server">
     <title></title>
 
-    <style type="text/css">   
+     <style type="text/css">   
         
         .x-panel-header-text-default-framed {
         color: #333;
@@ -33,14 +33,16 @@
         }
        
     </style>
+
 </head>
 <body>
-<ext:ResourceManager ID="ResourceManager1" runat="server" Theme="Gray" />
+    <ext:ResourceManager ID="ResourceManager1" runat="server" Theme="Gray" />
+
 
      <ext:FormPanel 
             runat="server" 
-            Title="Alta de Juicio"
-            Icon="BellAdd"             
+            Title="Alta de Contrato"
+            Icon="PageAdd"
             Height="330"
             Width="1000"           
             BodyPadding="3"
@@ -68,54 +70,34 @@
                 </Items>
             </ext:FieldContainer>
             
-            <ext:FieldContainer ID="fieldExpediente" 
+            <ext:FieldContainer ID="fieldContrato" 
                 runat="server" 
-                FieldLabel="No. Expediente" 
+                FieldLabel="No. de Contrato" 
                 AnchorHorizontal="100%"
                 Layout="HBoxLayout" >
                 <Items>
-                    <ext:TextField ID="txtExpediente" Width="150" runat="server" />
+                    <ext:TextField ID="txtContrato" Width="150" runat="server" />
                 </Items>
             </ext:FieldContainer>
             
-            <ext:FieldContainer ID="fieldJuzgado" 
+            <ext:FieldContainer ID="fieldTipoContrato" 
                 runat="server" 
-                FieldLabel="Juzgado" 
+                FieldLabel="Contrato" 
                 AnchorHorizontal="100%"
                 Layout="HBoxLayout">
                 <Items>
-                    <ext:ComboBox ID="comboJuzgado" runat="server" Width="150" EmptyText="Seleccione un Juzgado...">
+                    <ext:ComboBox ID="comboContrato" runat="server" Width="150" EmptyText="Tipo de Contrato...">
                     <Items>
-                        <ext:ListItem Text="Juzgado No. 1" Value="1" />
-                        <ext:ListItem Text="Juzgado No. 2" Value="2" />
-                        <ext:ListItem Text="Juzgado No. 3" Value="3" />
-                        <ext:ListItem Text="Juzgado No. 4" Value="4" />  
-                        <ext:ListItem Text="Juzgado No. 5" Value="5" />              
+                        <ext:ListItem Text="Tipo No. 1" Value="1" />
+                        <ext:ListItem Text="Tipo No. 2" Value="2" />
+                        <ext:ListItem Text="Tipo No. 3" Value="3" />
+                        <ext:ListItem Text="Tipo No. 4" Value="4" />  
+                        <ext:ListItem Text="Tipo No. 5" Value="5" />              
                     </Items>
                     </ext:ComboBox>
                 </Items>
-            </ext:FieldContainer>                   
-            
-            <ext:FieldContainer ID="fieldJuicio" 
-                runat="server" 
-                FieldLabel="Juicio" 
-                AnchorHorizontal="100%"
-                Layout="HBoxLayout">
-                <Items>
-                    <ext:ComboBox ID="comboJuicio" runat="server" Width="150" EmptyText="Tipo de Juicio...">
-                    <Items>
-                        <ext:ListItem Text="Juicio No. 1" Value="1" />
-                        <ext:ListItem Text="Juicio No. 2" Value="2" />
-                        <ext:ListItem Text="Juicio No. 3" Value="3" />
-                        <ext:ListItem Text="Juicio No. 4" Value="4" />  
-                        <ext:ListItem Text="Juicio No. 5" Value="5" />              
-                    </Items>
-                    </ext:ComboBox>
-                </Items>
-            </ext:FieldContainer>                         
-                  
+            </ext:FieldContainer>        
         </Items>
-        
     </ext:Panel>
 
     <ext:Panel 
@@ -141,40 +123,38 @@
                 </Items>
 
             </ext:FieldContainer>
-            
-            <ext:FieldSet Border="false"></ext:FieldSet>
 
-             <ext:FieldSet ID="fsDemandado" 
+            <ext:FieldSet Border="false"></ext:FieldSet>
+            
+             <ext:FieldSet ID="fsPartes" 
                 runat="server"
-                Title="Demandado"
+                Title="Nombre de las Partes / Involucrados"
                 Collapsible="false"
-                Width="400" Padding="5">
+                Width="380" Padding="5">
 
                 <Items>                
                     <ext:FieldContainer 
-                        ID="fieldDemandadoNombres" 
+                        ID="fieldParte1" 
                         runat="server" 
-                        FieldLabel="Nombre(s)" 
+                        FieldLabel="Involucrado" 
                         AnchorHorizontal="100%"
                         Layout="HBoxLayout">
 
                         <Items>
-                            <ext:TextField ID="txtPrimerNombre" runat="server" EmptyText="Primer Nombre" Margins="0 3 0 0" />
-                            <ext:TextField ID="txtSegundoNombre" runat="server" EmptyText="Segundo Nombre" Margins="0 3 0 0" />                    
+                            <ext:TextField ID="txtParte1" runat="server" EmptyText="Nombre Completo / Razón Social" Margins="0 3 0 0" Width="250"/>                
                         </Items>
 
                     </ext:FieldContainer>   
 
                     <ext:FieldContainer 
-                        ID="fieldDemandadoApellido" 
+                        ID="fieldParte2" 
                         runat="server" 
-                        FieldLabel="Apellido(s)" 
+                        FieldLabel="Involucrado" 
                         AnchorHorizontal="100%"
                         Layout="HBoxLayout">
 
                         <Items>
-                            <ext:TextField ID="txtPrimerApellido" runat="server" EmptyText="Primer Apellido" Margins="0 3 0 0" />
-                            <ext:TextField ID="txtSegundoApellido" runat="server" EmptyText="Segundo Apellido" Margins="0 3 0 0" />                    
+                            <ext:TextField ID="txtParte2" runat="server" EmptyText="Nombre Completo / Razón Social" Margins="0 3 0 0" Width="250" />                 
                         </Items>
 
                     </ext:FieldContainer>   

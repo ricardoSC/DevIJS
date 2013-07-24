@@ -8,11 +8,17 @@ body{
 .content{
     width: 800px;
     margin: 103px auto;
-    /*border: 1px solid #010102;*/
 }
 
 #header{
     
+}
+
+.separator
+{
+    float:left;
+    width:20px;
+    height:100px;
 }
 
 #logo{
@@ -128,6 +134,7 @@ body{
 
 .clear{
     clear: both;
+    padding:10px;
 }
 
 #footer{
@@ -295,4 +302,49 @@ body{
 .btnLogin:active
 {
     text-shadow:rgba(0,0,0,0.3) 0 -1px 0px; 
+}
+ 
+ 
+ .containertext
+ {
+    float: left;
+    width: 350px;
+    height:400px;
+    padding:10px;
+ }
+
+
+ .containertext h1
+{
+    color:#e2e3ea;
+    font-size:24px;
+    font-weight:bold;
+    font-family:'Carrois Gothic',"Times New Roman",Georgia,Serif !important;
+    border-bottom: 1px solid #253547;
+}
+			
+.containertext p
+{
+    color:#e2e3ea;
+    text-align: justify;
+    font-size:15.5px;
+    line-height: 120%;
+    font-weight:normal;
+    font-family:'Carrois Gothic',"Times New Roman",Georgia,Serif !important;
+}
+
+
+.containertext ul
+{
+    color:#e2e3ea;
+    font-size:15.5px;
+    font-weight:normal;
+    font-family:'Carrois Gothic',"Times New Roman",Georgia,Serif !important;
+}
+
+
+
+.containertext ul li
+{
+    list-style:
 }
