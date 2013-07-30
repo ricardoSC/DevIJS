@@ -59,7 +59,7 @@ body{
 	color:#E2E3EA;
 	text-decoration:none;
 	font-weight:bold;
-        font-size: 18px;
+        font-size: 22px;
 	padding:33px 0 0 0;
         text-align: center;
         background:url(images/buttonbg.png);
@@ -109,7 +109,7 @@ body{
 	color:#E2E3EA;
 	text-decoration:none;
 	font-weight:bold;
-        font-size: 18px;
+        font-size: 22px;
 	padding:33px 0 0 0;
         text-align: center;
         background:url(images/buttonbg.png);
@@ -317,9 +317,9 @@ body{
  .containertext h1
 {
     color:#e2e3ea;
-    font-size:24px;
+    font-size:22px;
     font-weight:bold;
-    font-family:'Carrois Gothic',"Times New Roman",Georgia,Serif !important;
+    font-family:'BenchNine',"Times New Roman",Georgia,Serif !important;
     border-bottom: 1px solid #253547;
 }
 			
@@ -327,19 +327,19 @@ body{
 {
     color:#e2e3ea;
     text-align: justify;
-    font-size:15.5px;
+    font-size:15px;
     line-height: 120%;
     font-weight:normal;
-    font-family:'Carrois Gothic',"Times New Roman",Georgia,Serif !important;
+    font-family:'Oxygen',"Times New Roman",Georgia,Serif !important;
 }
 
 
 .containertext ul
 {
     color:#e2e3ea;
-    font-size:15.5px;
+    font-size:15px;
     font-weight:normal;
-    font-family:'Carrois Gothic',"Times New Roman",Georgia,Serif !important;
+    font-family:'Oxygen',"Times New Roman",Georgia,Serif !important;
 }
 
 

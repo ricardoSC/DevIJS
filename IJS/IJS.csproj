@@ -88,6 +88,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Acceso.aspx" />
+    <Content Include="App\ClienteConsulta.aspx" />
     <Content Include="App\ClienteNuevo.aspx" />
     <Content Include="App\ContratoNuevo.aspx" />
     <Content Include="App\InmuebleNuevo.aspx" />
@@ -146,6 +147,13 @@
     </Compile>
     <Compile Include="Acceso.aspx.designer.cs">
       <DependentUpon>Acceso.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\ClienteConsulta.aspx.cs">
+      <DependentUpon>ClienteConsulta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\ClienteConsulta.aspx.designer.cs">
+      <DependentUpon>ClienteConsulta.aspx</DependentUpon>
     </Compile>
     <Compile Include="App\ClienteNuevo.aspx.cs">
       <DependentUpon>ClienteNuevo.aspx</DependentUpon>

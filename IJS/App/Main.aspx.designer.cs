@@ -139,6 +139,15 @@ namespace IJS.App {
         protected global::Ext.Net.MenuPanel mpClientes;
         
         /// <summary>
+        /// Control miCN.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::Ext.Net.MenuItem miCN;
+        
+        /// <summary>
         /// Control miCC.
         /// </summary>
         /// <remarks>

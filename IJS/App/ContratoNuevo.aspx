@@ -44,7 +44,7 @@
             Title="Alta de Contrato"
             Icon="PageAdd"
             Height="330"
-            Width="1000"           
+            Collapsible="true"         
             BodyPadding="3"
             Border="false"
             Frame="true" Layout="ColumnLayout">

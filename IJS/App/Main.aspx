@@ -299,23 +299,18 @@
                     >
                     <Menu ID="mClientes" runat="server">
                         <Items>
-                            <ext:MenuItem ID="miCC" runat="server" Text="Nuevo Cliente" Icon="Group">
+                            <ext:MenuItem ID="miCN" runat="server" Text="Nuevo Cliente" Icon="UserAdd">
                                 <Listeners>
-                                    <Click Handler="addTab(#{tabMain}, 'idCC', 'ClienteNuevo.aspx', this, 'Clientes - Nuevo Cliente');" />
+                                    <Click Handler="addTab(#{tabMain}, 'idNC', 'ClienteNuevo.aspx', this, 'Clientes - Nuevo Cliente');" />
                                 </Listeners>
                             </ext:MenuItem>                            
                             
-                            <%--<ext:MenuItem ID="miReception" runat="server" Text="Recepciones" Icon="PackageIn">
+                            <ext:MenuItem ID="miCC" runat="server" Text="Consulta de Clientes" Icon="UserMagnify">
                                 <Listeners>
-                                    <Click Handler="addTab(#{tabMain}, 'idRecep', 'http://www.w3schools.com/', this, 'Recepciones');" />
+                                    <Click Handler="addTab(#{tabMain}, 'idCC', 'ClienteConsulta.aspx', this, 'Clientes - Consulta de Clientes');" />
                                 </Listeners>
                             </ext:MenuItem>                            
-                            
-                            <ext:MenuItem ID="miTransfer" runat="server" Text="Transferencias" Icon="PackageLink">
-                                <Listeners>
-                                    <Click Handler="addTab(#{tabMain}, 'idTrans', 'http://www.w3schools.com/', this, 'Transferencias');" />
-                                </Listeners>
-                            </ext:MenuItem>   --%>                         
+                                                
                         </Items>
                     </Menu>
                 </ext:MenuPanel>

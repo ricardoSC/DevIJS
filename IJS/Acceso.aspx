@@ -10,7 +10,7 @@
         <link rel="stylesheet" type="text/css" href="styles/reset.css" media="screen" />
         <link rel="stylesheet" type="text/css" href="styles/styles.css" media="screen" />
         <link href='http://fonts.googleapis.com/css?family=BenchNine:700' rel='stylesheet' type='text/css'/>
-        <link href='http://fonts.googleapis.com/css?family=Carrois+Gothic' rel='stylesheet' type='text/css'/>
+        <link href='http://fonts.googleapis.com/css?family=Oxygen:300' rel='stylesheet' type='text/css'/>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     </head>
     <body >

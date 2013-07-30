@@ -41,11 +41,10 @@
             runat="server" 
             Title="Alta de Cliente"
             Icon="UserAdd"
-            Height="330"
-            Width="1000"           
+            Height="330"          
             BodyPadding="3"
             Border="false"
-            Frame="true" Layout="ColumnLayout">
+            Frame="true" Layout="ColumnLayout" Collapsible="true">
     <Items>   
 
     <ext:Panel 
@@ -56,6 +55,19 @@
         Border="false" Layout="FormLayout">
         
         <Items>
+            
+            <ext:FieldContainer 
+                ID="FieldContainer1" 
+                runat="server" 
+                FieldLabel="Tipo de Cliente" 
+                AnchorHorizontal="100%"
+                Layout="HBoxLayout">
+
+                <Items>                 
+                </Items>
+
+            </ext:FieldContainer>   
+
             <ext:FieldContainer 
                 ID="fieldClienteNombres" 
                 runat="server" 
