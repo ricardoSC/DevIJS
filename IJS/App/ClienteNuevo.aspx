@@ -37,14 +37,91 @@
 <body>
 <ext:ResourceManager ID="ResourceManager1" runat="server" Theme="Gray" />
 
-     <ext:FormPanel ID="FormPanel1" 
-            runat="server" 
-            Title="Alta de Cliente"
-            Icon="UserAdd"
-            Height="330"          
-            BodyPadding="3"
-            Border="false"
-            Frame="true" Layout="ColumnLayout" Collapsible="true">
+    <ext:Store runat="server" ID="stEstado">
+        <Proxy>
+            <ext:AjaxProxy runat="server" Url="http://ijsaalla.com/WSIJS/wsijsaalla/wsCB.asmx/CargaEstado">
+                <ActionMethods Read="POST" />
+                    <Reader>
+                    <ext:XmlReader Record="Estados" />
+                </Reader>
+            </ext:AjaxProxy>
+        </Proxy>
+        <Parameters>
+            <ext:StoreParameter Name="Estado" Value="#{cbMunicipio}.getValue()" Mode="Raw" />              
+        </Parameters>
+        <Model>
+            <ext:Model ID="Model13" runat="server">
+                <Fields>
+                    <ext:ModelField Name="id" Type="String" Mapping="Id" />
+                    <ext:ModelField Name="name" Type="String" Mapping="Name" />                        
+                </Fields>
+            </ext:Model>
+        </Model>             
+        <Listeners>
+            <Load Handler="#{cbEstado}.setValue(#{cbEstado}.store.getAt(0).get('id'));" />
+        </Listeners>          
+    </ext:Store>
+        
+    <ext:Store runat="server" ID="stMunicipio">
+        <Proxy>
+            <ext:AjaxProxy runat="server" Url="http://ijsaalla.com/WSIJS/wsijsaalla/wsCB.asmx/CargaMunicipio">
+                <ActionMethods Read="POST" />
+                    <Reader>
+                    <ext:XmlReader Record="Municipios" />
+                </Reader>
+            </ext:AjaxProxy>
+        </Proxy>
+        <Parameters>
+            <ext:StoreParameter Name="Municipio" Value="#{cbColonia}.getValue()" Mode="Raw" />              
+        </Parameters>
+        <Model>
+            <ext:Model ID="Model14" runat="server">
+                <Fields>
+                    <ext:ModelField Name="id" Type="String" Mapping="Id" />
+                    <ext:ModelField Name="name" Type="String" Mapping="Name" />                        
+                </Fields>
+            </ext:Model>
+        </Model>        
+        <Listeners>
+            <Load Handler="#{cbMunicipio}.setValue(#{cbMunicipio}.store.getAt(0).get('id'));#{cbEstado}.clearValue();#{stEstado}.load();" />
+        </Listeners>            
+    </ext:Store>
+
+    <ext:Store runat="server" ID="stColonia">
+        <Proxy>
+            <ext:AjaxProxy runat="server" Url="http://ijsaalla.com/WSIJS/wsijsaalla/wsCB.asmx/CargaColonia">
+                <ActionMethods Read="POST" />
+                    <Reader>
+                    <ext:XmlReader Record="Colonias" />
+                </Reader>
+            </ext:AjaxProxy>
+        </Proxy>
+        <Parameters>
+            <ext:StoreParameter Name="CP" Value="#{txtCP}.getValue()" Mode="Raw" />              
+        </Parameters>
+        <Model>
+            <ext:Model ID="Model15" runat="server">
+                <Fields>
+                    <ext:ModelField Name="id" Type="String" Mapping="Id" />
+                    <ext:ModelField Name="name" Type="String" Mapping="Name" />                        
+                </Fields>
+            </ext:Model>
+        </Model>
+        <Listeners>
+            <Load Handler="#{cbColonia}.setValue(#{cbColonia}.store.getAt(0).get('id')); #{cbMunicipio}.clearValue();#{stMunicipio}.load()" />
+        </Listeners>            
+    </ext:Store>
+
+    <ext:FormPanel ID="FormPanel1" 
+        runat="server" 
+        Title="Alta de Cliente"
+        Icon="UserAdd"
+        Height="330"          
+        BodyPadding="3"
+        Border="false"
+        Frame="true" 
+        Layout="ColumnLayout" 
+        Collapsible="true">
     <Items>   
 
     <ext:Panel 
@@ -64,6 +141,17 @@
                 Layout="HBoxLayout">
 
                 <Items>                 
+                     <ext:Checkbox ID="chkFisica" runat="server" BoxLabel="Persona Fisíca" Margins="0 10 0 0" AutoPostBack="true">
+                        <DirectEvents>
+                            <Change OnEvent="CheckPersona"/>
+                        </DirectEvents>
+                     </ext:Checkbox>
+                    
+                     <ext:Checkbox ID="chkMoral" runat="server" BoxLabel="Persona Moral" AutoPostBack="true" >
+                        <DirectEvents>
+                            <Change OnEvent="CheckPersona"/>
+                        </DirectEvents>
+                     </ext:Checkbox>
                 </Items>
 
             </ext:FieldContainer>   
@@ -76,8 +164,8 @@
                 Layout="HBoxLayout">
 
                 <Items>
-                    <ext:TextField ID="txtPrimerNombre" runat="server" EmptyText="Primer Nombre" Margins="0 3 0 0" />
-                    <ext:TextField ID="txtSegundoNombre" runat="server" EmptyText="Segundo Nombre" Margins="0 3 0 0" />                    
+                    <ext:TextField ID="txtPrimerNombre" runat="server" EmptyText="Nombre" Margins="0 3 0 0"/>
+                    <ext:TextField ID="txtSegundoNombre" runat="server" EmptyText="Segundo Nombre" Margins="0 3 0 0"/>                    
                 </Items>
 
             </ext:FieldContainer>   
@@ -176,66 +264,114 @@
         Layout="FormLayout">
                 
         <Items>
-        
+
+        <ext:FieldContainer ID="fieldCP" 
+                runat="server" 
+                FieldLabel="C.P." 
+                AnchorHorizontal="100%" 
+                Layout="HBoxLayout">                                       
+                <Items>
+                    <ext:TextField 
+                        ID="txtCP" 
+                        runat="server" 
+                        Width="150" 
+                        Margins="0 5 0 0" 
+                        MinLength="5"
+                        EmptyText="#####"
+                        Regex="^[0-9]*$" 
+                        RegexText="Este campo solo acepta numeros por favor rectifica" />
+
+                    <ext:Button runat="server" ID="btnBuscarCP" Icon="Magnifier" ToolTip="Buscar C.P....">
+                        <Listeners>
+                            <Click Handler="#{cbColonia}.clearValue();#{stColonia}.load();" />
+                        </Listeners>
+                        <DirectEvents>
+                            <Click OnEvent="btnBuscaCP_DirectClick" />
+                        </DirectEvents>
+                    </ext:Button>
+                </Items>
+            </ext:FieldContainer>
+
+        <ext:FieldContainer ID="fieldColonia" 
+                runat="server" 
+                FieldLabel="Colonia"
+                AnchorHorizontal="100%"
+                Layout="HBoxLayout">
+                <Items>
+                    <ext:ComboBox 
+                            ID="cbColonia" 
+                            StoreID="stColonia"
+                            runat="server" 
+                            Editable="false"
+                            TypeAhead="true" 
+                            QueryMode="Local"      
+                            ForceSelection="true"
+                            TriggerAction="All"
+                            DisplayField="name"
+                            ValueField="id"
+                            EmptyText="Selecciona tu Colonia..."
+                            ValueNotFoundText="Cargando..." 
+                            Disabled="true">
+                            <Listeners>
+                                <Select Handler="#{cbMunicipio}.clearValue();#{stMunicipio}.load();" />
+                            </Listeners>
+                        </ext:ComboBox>
+                </Items>
+        </ext:FieldContainer>    
+
+        <ext:FieldContainer ID="fieldMpo" 
+                runat="server" 
+                FieldLabel="Municipio" 
+                AnchorHorizontal="100%"
+                Layout="HBoxLayout">
+                <Items>
+                    <ext:ComboBox 
+                            ID="cbMunicipio"
+                            runat="server" 
+                            StoreID="stMunicipio"
+                            Editable="false"
+                            TypeAhead="true" 
+                            QueryMode="Local"      
+                            ForceSelection="true"
+                            TriggerAction="All"    
+                            DisplayField="name"
+                            ValueField="id"
+                            EmptyText="Selecciona tu Municipio..."
+                            ValueNotFoundText="Cargando..." 
+                            Disabled="true">
+                            <Listeners>
+                                <Select Handler="#{cbEstado}.clearValue();#{stEstado}.load();" />
+                            </Listeners>
+                         </ext:ComboBox>
+                </Items>
+        </ext:FieldContainer> 
+
         <ext:FieldContainer ID="fieldEstado" 
                 runat="server" 
                 FieldLabel="Estado" 
                 AnchorHorizontal="100%"
                 Layout="HBoxLayout">
                 <Items>
-                    <ext:ComboBox ID="comboEstado" runat="server" Width="150" EmptyText="Estado...">
-                    <Items>
-                        <ext:ListItem Text="Estado 1" Value="1" />
-                        <ext:ListItem Text="Estado 2" Value="2" />     
-                    </Items>
-                    </ext:ComboBox>
-                </Items>
-            </ext:FieldContainer>     
-            
-            <ext:FieldContainer ID="fieldMpo" 
-                runat="server" 
-                FieldLabel="Municipio" 
-                AnchorHorizontal="100%"
-                Layout="HBoxLayout">
-                <Items>
-                    <ext:ComboBox ID="comboMpo" runat="server" Width="150" EmptyText="Municipio...">
-                    <Items>
-                        <ext:ListItem Text="Municipio 1" Value="1" />
-                        <ext:ListItem Text="Municipio 2" Value="2" />     
-                    </Items>
-                    </ext:ComboBox>
+                    <ext:ComboBox 
+                            ID="cbEstado"
+                            runat="server"
+                            StoreID="stEstado"            
+                            Editable="false"
+                            TypeAhead="true" 
+                            QueryMode="Local"      
+                            ForceSelection="true"
+                            TriggerAction="All"
+                            DisplayField="name"
+                            ValueField="id"
+                            ValueNotFoundText="Cargando..."
+                            EmptyText="Selecciona tu estado..." 
+                            Disabled="true">    
+                            <Listeners>
+                                <Select Handler="#{cbMunicipio}.clearValue();#{stMunicipio}.load();" />
+                            </Listeners>
+                        </ext:ComboBox>
                 </Items>
             </ext:FieldContainer>    
-            
-            <ext:FieldContainer ID="fieldColonia" 
-                runat="server" 
-                FieldLabel="Colonia"
-                AnchorHorizontal="100%"
-                Layout="HBoxLayout">
-                <Items>
-                    <ext:ComboBox ID="comboColonia" runat="server" Width="150" EmptyText="Colonia...">
-                    <Items>
-                        <ext:ListItem Text="Colonia 1" Value="1" />
-                        <ext:ListItem Text="Colonia 2" Value="2" />     
-                    </Items>
-                    </ext:ComboBox>
-                </Items>
-            </ext:FieldContainer>      
-
-            <ext:FieldContainer ID="fieldCP" 
-                runat="server" 
-                FieldLabel="C.P." 
-                AnchorHorizontal="100%"
-                Layout="HBoxLayout">
-                <Items>
-                    <ext:ComboBox ID="comboCP" runat="server" Width="150" EmptyText="C.P....">
-                    <Items>
-                        <ext:ListItem Text="C.P. 1" Value="1" />
-                        <ext:ListItem Text="C.P. 2" Value="2" />     
-                    </Items>
-                    </ext:ComboBox>
-                </Items>
-            </ext:FieldContainer>  
 
             <ext:FieldContainer ID="fieldCalle" 
                 runat="server" 

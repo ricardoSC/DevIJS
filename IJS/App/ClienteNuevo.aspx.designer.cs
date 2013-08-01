@@ -31,6 +31,60 @@ namespace IJS.App {
         protected global::Ext.Net.ResourceManager ResourceManager1;
         
         /// <summary>
+        /// Control stEstado.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::Ext.Net.Store stEstado;
+        
+        /// <summary>
+        /// Control Model13.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::Ext.Net.Model Model13;
+        
+        /// <summary>
+        /// Control stMunicipio.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::Ext.Net.Store stMunicipio;
+        
+        /// <summary>
+        /// Control Model14.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::Ext.Net.Model Model14;
+        
+        /// <summary>
+        /// Control stColonia.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::Ext.Net.Store stColonia;
+        
+        /// <summary>
+        /// Control Model15.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::Ext.Net.Model Model15;
+        
+        /// <summary>
         /// Control FormPanel1.
         /// </summary>
         /// <remarks>
@@ -56,6 +110,24 @@ namespace IJS.App {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::Ext.Net.FieldContainer FieldContainer1;
+        
+        /// <summary>
+        /// Control chkFisica.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::Ext.Net.Checkbox chkFisica;
+        
+        /// <summary>
+        /// Control chkMoral.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::Ext.Net.Checkbox chkMoral;
         
         /// <summary>
         /// Control fieldClienteNombres.
@@ -220,40 +292,31 @@ namespace IJS.App {
         protected global::Ext.Net.Panel panelRight;
         
         /// <summary>
-        /// Control fieldEstado.
+        /// Control fieldCP.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::Ext.Net.FieldContainer fieldEstado;
+        protected global::Ext.Net.FieldContainer fieldCP;
         
         /// <summary>
-        /// Control comboEstado.
+        /// Control txtCP.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::Ext.Net.ComboBox comboEstado;
+        protected global::Ext.Net.TextField txtCP;
         
         /// <summary>
-        /// Control fieldMpo.
+        /// Control btnBuscarCP.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::Ext.Net.FieldContainer fieldMpo;
-        
-        /// <summary>
-        /// Control comboMpo.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::Ext.Net.ComboBox comboMpo;
+        protected global::Ext.Net.Button btnBuscarCP;
         
         /// <summary>
         /// Control fieldColonia.
@@ -265,31 +328,49 @@ namespace IJS.App {
         protected global::Ext.Net.FieldContainer fieldColonia;
         
         /// <summary>
-        /// Control comboColonia.
+        /// Control cbColonia.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::Ext.Net.ComboBox comboColonia;
+        protected global::Ext.Net.ComboBox cbColonia;
         
         /// <summary>
-        /// Control fieldCP.
+        /// Control fieldMpo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::Ext.Net.FieldContainer fieldCP;
+        protected global::Ext.Net.FieldContainer fieldMpo;
         
         /// <summary>
-        /// Control comboCP.
+        /// Control cbMunicipio.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::Ext.Net.ComboBox comboCP;
+        protected global::Ext.Net.ComboBox cbMunicipio;
+        
+        /// <summary>
+        /// Control fieldEstado.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::Ext.Net.FieldContainer fieldEstado;
+        
+        /// <summary>
+        /// Control cbEstado.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::Ext.Net.ComboBox cbEstado;
         
         /// <summary>
         /// Control fieldCalle.
